@@ -67,6 +67,7 @@ background: linear-gradient(#374155, #232328);
 .container{
 
 max-width: 1140px;
+min-height: 100%;
 margin: 10px auto;
 margin: 20px 0;
 background-color: whitesmoke;
@@ -245,12 +246,25 @@ border: 0;
 
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 .footer {
 
 color: white;
-padding: 25px;
+padding: 25px 25px 40px;
 background-color: #232328;
 text-align: center;
+
+position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 
 }
 
@@ -285,7 +299,7 @@ float: left;
 .input-log-sign {
 
 padding:6px;
-font-size: 14px; 
+font-size: 14px;
 width: 100%;
 margin-bottom: 16px;
 font-weight: bolder;
