@@ -66,6 +66,7 @@ background: linear-gradient(#374155, #232328);
 
 .container{
 
+width:80%;
 max-width: 1140px;
 margin: 10px auto;
 margin-top: 20px;
@@ -78,6 +79,7 @@ vertical-align: top;
 
 position: relative;
 width: 900px;
+margin: auto;;
 
 }
 
@@ -162,7 +164,7 @@ transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 
 display: block;
 
-}  
+}
 
 .carousel-control-prev,
 .carousel-control-next {
@@ -201,7 +203,7 @@ opacity: 0.9;
 left: 0;
 
 }
-  
+
 .carousel-control-next {
 
 right: 0;
