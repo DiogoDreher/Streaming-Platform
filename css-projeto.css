@@ -66,10 +66,9 @@ background: linear-gradient(#374155, #232328);
 
 .container{
 
-width:80%;
 max-width: 1140px;
 margin: 10px auto;
-margin-top: 20px;
+margin: 20px 0;
 background-color: whitesmoke;
 vertical-align: top;
 
@@ -79,7 +78,7 @@ vertical-align: top;
 
 position: relative;
 width: 900px;
-margin: auto;;
+margin: auto;
 
 }
 
@@ -243,5 +242,104 @@ overflow: hidden;
 clip: rect(0, 0, 0, 0);
 white-space: nowrap;
 border: 0;
+
+}
+
+.footer {
+
+color: white;
+padding: 25px;
+background-color: #232328;
+text-align: center;
+
+}
+
+.text-log-sign {
+
+color: #232328;
+text-align: center;
+font-family: 'Lato';
+font-size: 24px;
+font-weight: 800;
+
+}
+
+.section-log-sign {
+
+max-width: 50%;
+margin: auto;
+
+}
+
+.legend-log-sign {
+
+color: #232328;
+font-family: 'Lato';
+font-size: 12px;
+font-weight: bolder;
+margin-bottom: 0px;
+float: left;
+
+}
+
+.input-log-sign {
+
+padding:6px;
+font-size: 14px; 
+width: 100%;
+margin-bottom: 16px;
+font-weight: bolder;
+
+}
+
+.forgot-password {
+
+color: #232328;
+font-family: 'Lato';
+text-transform: uppercase;
+font-size: 10px; float: right;
+text-decoration: none;
+font-weight: bolder;
+margin-bottom: 16px;
+
+}
+
+.forgot-password:hover {
+
+color: #d96c06;
+text-transform: uppercase;
+text-decoration: none;
+font-weight: bolder;
+margin-bottom: 16px;
+
+}
+
+.button-log-sign {
+
+background-color: #d96c06;
+color: white;
+font-family: 'Lato';
+font-weight: 800;
+font-size: 16px;
+padding: 6px 0;
+width: 100%;
+text-transform: uppercase;
+border: none;
+cursor: pointer;
+
+}
+
+.button-log-sign:hover {
+
+background-color: #d95a06;
+color: white;
+font-family: 'Lato';
+font-weight: 800;
+font-size: 16px;
+padding: 6px 0;
+width: 100%;
+text-transform: uppercase;
+border: none;
+cursor: pointer;
 
 }
