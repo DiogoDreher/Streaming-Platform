@@ -10,7 +10,7 @@ text-align: center;
 
 .barra {
 
-max-width: 1140px;
+max-width: 900px;
 margin: auto;
 height: auto;
 
@@ -21,7 +21,7 @@ height: auto;
 text-decoration: none;
 color: white;
 font-weight: 600;
-font-size: 16px;
+font-size: 24px;
 text-transform: uppercase;
 float: left;
 letter-spacing: .1rem;
@@ -39,6 +39,7 @@ text-transform: uppercase;
 float: right;
 letter-spacing: .1rem;
 margin-left: 15px;
+padding-top: 5px;
 
 }
 
