@@ -23,20 +23,35 @@
 
       <section class="container" style="padding: 45px 0;background-color: whitesmoke;">
 
-        <p class="text-log-sign">Log In</p>
+        <p class="text-log-sign">Sign Up</p>
+
         <section class="section-log-sign">
+
           <form class="" action="" method="post">
-            <p class="legend-log-sign">USERNAME OR EMAIL <span style="color: red;">*</span> </p>
+            <p class="legend-log-sign">FULL NAME <span style="color: red;">*</span> </p>
             <br>
-            <input type="text" class="input-log-sign" required autofocus>
+            <input type="text" class="input-log-sign" required autofocus placeholder="John Snow">
+            <br>
+            <p class="legend-log-sign">USERNAME <span style="color: red;">*</span> </p>
+            <br>
+            <input type="text" class="input-log-sign" required placeholder="john.snow.1876">
+            <br>
+            <p class="legend-log-sign">EMAIL <span style="color: red;">*</span> </p>
+            <br>
+            <input type="email" class="input-log-sign" required placeholder="john@snow.wf">
             <br>
             <p class="legend-log-sign">PASSWORD <span style="color: red;">*</span> </p>
             <br>
             <input type="password" class="input-log-sign" required>
             <br>
-            <a href="#" class="forgot-password">Forgot password?</a>
+            <p class="legend-log-sign">CONFIRM PASSWORD <span style="color: red;">*</span> </p>
+            <br>
+            <input type="password" class="input-log-sign" required>
+            <br>
+            <input type="checkbox" name="terms" id="terms" required>
+            <label for="terms">I accept the terms and want to proceed. <span style="color: red;">*</span> </label>
 
-            <button type="submit" class="button-log-sign">Log In</button>
+            <button type="submit" class="button-log-sign">Sign Up</button>
           </form>
         </section>
 
