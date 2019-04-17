@@ -4580,10 +4580,9 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.842);
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 5px;
 }
 
 .card > hr {
@@ -4609,6 +4608,15 @@ input[type="button"].btn-block {
 
 .card-title {
   margin-bottom: 0.75rem;
+  text-decoration: none;
+  color: #232328
+}
+
+.card-title:hover {
+
+color: #666670;
+text-decoration: none;
+
 }
 
 .card-subtitle {
@@ -4646,7 +4654,7 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(175, 175, 175, 0.918);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -9773,7 +9781,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #232328 !important;
 }
 
 .text-black-50 {
