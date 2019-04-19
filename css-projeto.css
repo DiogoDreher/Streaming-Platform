@@ -5,7 +5,7 @@ background-color: rgba(0, 0, 0, 0.75);
 display: inline-block;
 width: 100%;
 text-align: center;
-position: fixed ;
+position: fixed;
 margin-top: -100px;
 z-index: 30;
 
@@ -72,6 +72,7 @@ background: linear-gradient(#1a1a1a, #0a0a0a);
 
 max-width: 1140px;
 min-height: 100%;
+position: relative;
 margin-top: 100px;
 margin-bottom: 50px;
 vertical-align: top;
@@ -83,6 +84,7 @@ vertical-align: top;
 position: relative;
 width: 900px;
 margin: auto;
+margin-top: 100px;
 
 }
 
