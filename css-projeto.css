@@ -193,14 +193,23 @@ transition: opacity 0.15s ease;
 
 }
 
-.carousel-control-prev:hover, .carousel-control-prev:focus,
-.carousel-control-next:hover,
-.carousel-control-next:focus {
+.carousel-control-prev:hover {
 
 color: #fff;
 text-decoration: none;
 outline: 0;
 opacity: 0.9;
+background: linear-gradient(to right, #00000077 0%,#eeeeee00 100%)
+
+}
+
+.carousel-control-next:hover {
+
+color: #fff;
+text-decoration: none;
+outline: 0;
+opacity: 0.9;
+background: linear-gradient(to right, #eeeeee00 0%,#00000077 100%)
 
 }
 
