@@ -389,3 +389,35 @@ margin-bottom: 22px;
 background: linear-gradient(#0a0a0a00, #8b6b00e0);
 
 }
+
+.info-watch {
+
+width: 100%;
+height: 50vh;
+background-color: rgba(255, 255, 255, 0.842);
+border-radius: 8px;
+
+}
+
+.player-watch{}
+
+.botaoplayer {
+    
+  background-color: #d4983e;
+  color: #202020;
+  padding: 20px;
+  font-family: sans-serif, "Helvetica Neue";
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  
+}
+
+.botaoplayer:hover {
+
+  background-color: lightskyblue;
+  color: #202020;
+  cursor: pointer;
+
+}
