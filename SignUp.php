@@ -11,8 +11,8 @@
 
 <body style="margin: 0;">
 
-  <div class="page-container">
-    <div class="content-wrap">
+  <section class="page-container">
+    <section class="content-wrap">
 
       <section class="section-barra">
         <nav class="barra">
@@ -54,14 +54,7 @@
 
             <button type="submit" class="button-log-sign">Sign Up</button>
           </form>
-        </section>
-
-      </section>
-
-    </div>
-    <footer class="footer">Copyright &copy; ThunderStream 2019</footer>
-  </div>
-
-</body>
-
-</html>
+        
+        
+          <!--Footer-->
+          <?php require_once("Includes/footer.php"); ?>

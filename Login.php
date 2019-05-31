@@ -98,15 +98,7 @@ if (isset($_POST["Submit"]))
             <button type="submit" name="Submit" class="button-log-sign">Log In</button>
           </form>
         </section>
+      
 
-      </section>
-      </section>
-
-
-    </section>
-    <footer class="footer">Copyright &copy; ThunderStream 2019</footer>
-  </section>
-
-</body>
-
-</html>
+        <!--Footer-->
+       <?php require_once("Includes/footer.php"); ?>
