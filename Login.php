@@ -47,7 +47,7 @@ if (isset($_POST["Submit"]))
 
 <head>
   <title>Projeto Final TI 2 - Log In Form</title>
-  <link href="css-projeto.css" rel="stylesheet">
+  <link href="css/css-projeto.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
     rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
