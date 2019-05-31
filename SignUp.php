@@ -16,9 +16,9 @@
 
       <section class="section-barra">
         <nav class="barra">
-          <a class="brand-barra" href="index.html"><i class="fas fa-bolt" style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-          <a class="link-barra" href="LogIn.html">Log In</a>
-          <a class="link-barra" href="SignUp.html">Sign Up</a>
+          <a class="brand-barra" href="index.php"><i class="fas fa-bolt" style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
+          <a class="link-barra" href="LogIn.php">Log In</a>
+          <a class="link-barra" href="SignUp.php">Sign Up</a>
         </nav>
       </section>
 

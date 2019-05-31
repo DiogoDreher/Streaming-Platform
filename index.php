@@ -1,3 +1,7 @@
+<?php require_once("Includes/DB.php"); ?>
+<?php require_once("Includes/Functions.php"); ?>
+<?php require_once("Includes/Sessions.php"); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,18 +16,27 @@
   
     <section class="section-barra">
       <nav class="barra">
-        <a class="brand-barra" href="index.html"><i class="fas fa-bolt" style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-        <a class="link-barra" href="LogIn.html">Log In</a>
-        <a class="link-barra" href="SignUp.html">Sign Up</a>
+        <a class="brand-barra" href="index.php"><i class="fas fa-bolt" style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
+        <a class="link-barra" href="LogIn.php">Log In</a>
+        <a class="link-barra" href="SignUp.php">Sign Up</a>
       </nav>
     </section>
+    
 
     <section class="page-container">
-      <section class="content-wrap">
-  
+
+    
+      <section class="content-wrap">  
         
   
         <section class="container">
+
+        <!-- PHP SCOPE TO CALL FUNCITONS-->
+        <?php
+      echo ErrorMessage();
+      echo SuccessMessage();
+      ?>
+        <!--END OF PHP SCOPE-->
   
           <section id="indicadores" class="carousel slide my-4" data-ride="carousel">
             <ol class="indicadores">
@@ -88,7 +101,9 @@
   
               <section class="col-lg-4 col-md-6 mb-4">
                 <section class="card">
-                  <a href="#"><img class="card-img-top" src="http://grantjkidney.com/wp-content/uploads/2018/11/films.png" alt=""></a>
+                  <a href="#"><img class="card-img-top"
+                      src="https://boygeniusreport.files.wordpress.com/2017/10/the-matrix.jpg?quality=98&strip=all"
+                      alt=""></a>
                   <section class="card-body">
                     <h4 class="card-title">
                       <a href="#" class="card-title">The Matrix</a>
@@ -152,18 +167,6 @@
               </section>
             </section>
   
-          </section>
-  
-        </section>
-  
-      </section>
-      <footer class="footer">Copyright © ThunderStream 2019</footer>
-    </section>
-  
-    <!-- JAVASCRIPT -->
+          <!--Footer-->
 
-    <script src="javascript/jquery.js"></script>
-    <script src="javascript/bootstrap.bundle.js"></script>
-
-  </body>
-</html>
+          <?php require_once("Includes/footer.php"); ?>
