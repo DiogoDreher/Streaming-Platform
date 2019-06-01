@@ -23,7 +23,9 @@ if (isset($_POST["Submit"]))
     {
       $_SESSION["UserId"] = $Found_Account["id"];
       $_SESSION["Username"] = $Found_Account["username"];
-      $_SESSION["SuccessMessage"] = "Welcome " . $_SESSION["Username"] . "!";
+      $_SESSION["Name"] = $Found_Account["name"];
+      $_SESSION["Surname"] = $Found_Account["surname"];
+      $_SESSION["SuccessMessage"] = "Welcome " . $_SESSION["Name"] . " " . $_SESSION["Surname"] . "!";
       if (isset($_SESSION["TrackingURL"]))
       {
         Redirect_to($_SESSION["TrackingURL"]);

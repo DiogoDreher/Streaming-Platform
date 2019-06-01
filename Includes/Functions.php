@@ -29,7 +29,7 @@ function CheckUsernameExistsOrNot($Username)
 function Login_Attempt($Username, $Password)
 {
     global $ConnectingDB;
-    $sql = "SELECT * FROM users WHERE username =:userName AND passw =:passWord LIMIT 1";
+    $sql = "SELECT * FROM users WHERE username =:userName OR email=:userName AND passw =:passWord LIMIT 1";
     $stmt = $ConnectingDB->prepare($sql);
     $stmt->bindValue(':userName', $Username);
     $stmt->bindValue(':passWord', $Password);
