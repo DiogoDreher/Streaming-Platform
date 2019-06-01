@@ -21,8 +21,19 @@
     <nav class="barra">
       <a class="brand-barra" href="index.php"><i class="fas fa-bolt"
           style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-      <a class="link-barra" href="LogIn.php">Log In</a>
-      <a class="link-barra" href="SignUp.php">Sign Up</a>
+      <?php 
+        if (isset($_SESSION["UserId"]))
+        {
+          echo "<a class='link-barra' href='LogOut.php'>Log Out</a>
+                <a class='link-barra' href='MyProfile.php'>My Profile</a>";
+        }
+        else
+        {
+          echo "<a class='link-barra' href='LogIn.php'>Log In</a>
+                <a class='link-barra' href='SignUp.php'>Sign Up</a>";
+        }
+      ?>    
+      
     </nav>
   </section>
 

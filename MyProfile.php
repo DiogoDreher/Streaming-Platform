@@ -5,6 +5,22 @@
 $_SESSION["TrackingURL"] = $_SERVER["PHP_SELF"];
 Confirm_Login(); ?>
 
+<?php
+//Fetching the existing Admin Data
+$UserId = $_SESSION["UserId"];
+global $ConnectingDB;
+$sql = "SELECT * FROM users WHERE id='$UserId'";
+$stmt = $ConnectingDB->query($sql);
+while ($DataRows = $stmt->fetch())
+{
+    $ExistingName = $DataRows["name"];
+    $ExistingSurname = $DataRows["surname"];
+    $ExistingUsername = $DataRows["username"];
+    $ExistingEmail = $DataRows["email"];
+    $ExistingImage = $DataRows["image"];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -42,40 +58,43 @@ Confirm_Login(); ?>
          ?>
             <!--END OF PHP SCOPE-->
 
-                <section id="indicadores" class="carousel slide my-4" data-ride="carousel">
-                    <ol class="indicadores">
-                        <li data-target="#indicadores" data-slide-to="0" class="active"></li>
-                        <li data-target="#indicadores" data-slide-to="1"></li>
-                        <li data-target="#indicadores" data-slide-to="2"></li>
-                    </ol>
-                    <section class="carousel-inner" role="listbox">
-                        <section class="carousel-item active" style="text-align: center">
-                            <img class="d-block img-fluid"
-                                src="https://www.hdwallpapers.in/download/x_men_apocalypse_banner_poster-1600x900.jpg"
-                                alt="First slide">
-                        </section>
-                        <section class="carousel-item" style="text-align: center">
-                            <img class="d-block img-fluid"
-                                src="https://blog.cyrildason.com/wp-content/uploads/2016/11/House-MD.png"
-                                alt="Second slide">
-                        </section>
-                        <section class="carousel-item" style="text-align: center">
-                            <img class="d-block img-fluid"
-                                src="https://mypostercollection.com/wp-content/uploads/2018/07/The-Walking-Dead-poster-4-1024x768.jpg"
-                                alt="Third slide">
-                        </section>
-                    </section>
-                    <a class="carousel-control-prev" href="#indicadores" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#indicadores" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                <section id="Profile" name="Profile" >
+                <div class="row">
+                    <!-- LEFT AREA-->
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-header bg-dark text-light text-center">
+                                <h3><?php echo htmlentities($ExistingName); ?></h3>
+                            </div>
+                            <div class="card-body">
+                                <img src="images/<?php echo $ExistingImage; ?>" class="d-block mb-3" alt="">
+                                <div class="text-center">
+                                    <a href="Edit.php">Edit Profile</a> <br>
+                                    <a href="Delete.php">Delete Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LEFT AREA END-->
+                
+                    <!-- RIGHT AREA-->
+                    <div class="col-md-9" style="min-height:400px;">
+                        <div class="card">
+                            <div class="card-header bg-dark text-light text-center">
+                                <h3>My Profile</h3>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Name:</strong> <?php echo htmlentities($ExistingName . " " . $ExistingSurname); ?></p>
+                                <p><strong>Username:</strong> <?php echo htmlentities($ExistingUsername); ?></p>
+                                <p><strong>Email:</strong> <?php echo htmlentities($ExistingEmail); ?></p>
+                            </div>
+                        
+                    </div>
+                </div>
                 </section>
+                
 
-                <p class="homepage-categoria">Filmes</p>
+                <p class="homepage-categoria">Favorite Movies</p>
 
                 <section class="row">
 
@@ -135,7 +154,7 @@ Confirm_Login(); ?>
 
                 </section>
 
-                <p class="homepage-categoria">Séries</p>
+                <p class="homepage-categoria">Favorite Series</p>
 
                 <section class="row">
 

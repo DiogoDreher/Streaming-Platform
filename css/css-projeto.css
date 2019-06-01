@@ -11,6 +11,10 @@ z-index: 30;
 
 }
 
+.dark{
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .barra {
 
 max-width: 900px;

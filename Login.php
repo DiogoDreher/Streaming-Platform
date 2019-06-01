@@ -4,7 +4,7 @@
 <?php
 if (isset($_SESSION["UserId"]))
 {
-  Redirect_to("Dashboard.php");
+  Redirect_to("MyProfile.php");
 }
 if (isset($_POST["Submit"]))
 {
@@ -32,7 +32,7 @@ if (isset($_POST["Submit"]))
       }
       else
       {
-        Redirect_to("Dashboard.php");
+        Redirect_to("MyProfile.php");
       }
     }
     else

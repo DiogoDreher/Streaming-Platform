@@ -4580,7 +4580,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgba(255, 255, 255, 0.842);
+  background-color: rgba(0, 0, 0, 0.75);
   background-clip: border-box;
   border-radius: 5px;
 }
@@ -4649,7 +4649,7 @@ font-weight: bold;
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   color: inherit;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.75);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -6472,7 +6472,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: rgba(0, 0, 0, 0.75) !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
