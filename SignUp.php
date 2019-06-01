@@ -1,3 +1,75 @@
+<?php require_once("Includes/DB.php"); ?>
+<?php require_once("Includes/Functions.php"); ?>
+<?php require_once("Includes/Sessions.php"); ?>
+<?php
+if (isset($_POST["Submit"]))
+{
+  $FirstName = $_POST["fName"];
+  $LastName = $_POST["lName"];
+  $Username = $_POST["Username"];  
+  $Password = $_POST["Passw"];
+  $Email = $_POST["Email"];
+  $ConfirmPassword = $_POST["ConfirmPassw"];
+
+  date_default_timezone_set("Europe/Lisbon");
+  $CurrentTime = time();
+  $DateTime = strftime("%B-%d-%Y %H:%M:%S", $CurrentTime);
+
+  if (empty($Username) || 
+      empty($FirstName) || 
+      empty($LastName) || 
+      empty($Password) || 
+      empty($Email) ||
+      empty($ConfirmPassword))
+  {
+    $_SESSION['ErrorMessage'] = "All fields must be filled out";
+    Redirect_to("SignUp.php");
+  }
+  elseif (strlen($Password) < 6)
+  {
+    $_SESSION['ErrorMessage'] = "Password should be at least 6 characters";
+    Redirect_to("SignUp.php");
+  }
+  elseif ($Password !== $ConfirmPassword)
+  {
+    $_SESSION['ErrorMessage'] = "Password and confirmation should match!";
+    Redirect_to("SignUp.php");
+  }
+  elseif (CheckUsernameExistsOrNot($Username))
+  {
+    $_SESSION['ErrorMessage'] = "Username already exists, please try another one.";
+    Redirect_to("SignUp.php");
+  }
+  else
+  {
+    //Query to insert new user in our DataBase
+    $ConnectingDB;
+    $sql = "INSERT INTO users(name, surname, username, passw, email, datetime)";
+    $sql .= "VALUES(:fName, :lName, :userName, :password, :eMail, :dateTime)";
+    $stmt = $ConnectingDB->prepare($sql);
+    $stmt->bindValue(':fName', $FirstName);
+    $stmt->bindValue(':lName', $LastName);
+    $stmt->bindValue(':userName', $Username);
+    $stmt->bindValue(':password', $Password);
+    $stmt->bindValue(':eMail', $Email);
+    $stmt->bindValue(':dateTime', $DateTime);
+
+    $Execute = $stmt->execute();
+
+    if ($Execute)
+    {
+      $_SESSION["SuccessMessage"] = "Account created successfully";
+      Redirect_to("index.php");
+    }
+    else
+    {
+      $_SESSION['ErrorMessage'] = "Something went wrong. Try Again!";
+      Redirect_to("index.php");
+    }
+  }
+} //Ending of Submit Button If-Condition
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,8 +93,17 @@
           <a class="link-barra" href="SignUp.php">Sign Up</a>
         </nav>
       </section>
+      
 
-      <section class="container" style="padding: 45px 0; border-radius: 5px; background-color: rgb(218, 218, 218);">
+      <section class="container">
+          <!-- PHP SCOPE TO CALL FUNCITONS-->
+          <?php
+                   echo ErrorMessage();
+                   echo SuccessMessage();
+                   ?>
+          <!--END OF PHP SCOPE-->
+        
+      <section style="padding: 45px 0; border-radius: 5px; background-color: rgb(218, 218, 218);">
 
         <p class="text-log-sign">Sign Up</p>
 
@@ -58,6 +139,7 @@
 
             <button type="submit" name="Submit" id="Submit" class="button-log-sign">Sign Up</button>
           </form>
+        </section>
         
         
           <!--Footer-->

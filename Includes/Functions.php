@@ -11,7 +11,7 @@ function Redirect_to($New_Location)
 function CheckUsernameExistsOrNot($Username)
 {
     global $ConnectingDB;
-    $sql = "SELECT username FROM admins WHERE username=:userName";
+    $sql = "SELECT username FROM users WHERE username=:userName";
     $stmt = $ConnectingDB->prepare($sql);
     $stmt->bindValue(':userName', $Username);
     $stmt->execute();
