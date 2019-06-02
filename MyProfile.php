@@ -17,7 +17,7 @@ while ($DataRows = $stmt->fetch())
     $ExistingSurname = $DataRows["surname"];
     $ExistingUsername = $DataRows["username"];
     $ExistingEmail = $DataRows["email"];
-    $ExistingImage = $DataRows["image"];
+    $ExistingImage = $DataRows["userimage"];
 }
 ?>
 
@@ -67,10 +67,10 @@ while ($DataRows = $stmt->fetch())
                                 <h3><?php echo htmlentities($ExistingName); ?></h3>
                             </div>
                             <div class="card-body">
-                                <img src="images/<?php echo $ExistingImage; ?>" class="d-block mb-3" alt="">
-                                <div class="text-center">
+                                <img src="images/<?php echo $ExistingImage; ?>" class="rounded-circle mx-auto d-block" style="max-width: 120px ;max-height: 150px ; ">
+                                <div class="text-center mt-2">
                                     <a href="Edit.php">Edit Profile</a> <br>
-                                    <a href="Delete.php">Delete Account</a>
+                                    <a href="DeleteUser.php">Delete Account</a>
                                 </div>
                             </div>
                         </div>
