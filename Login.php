@@ -32,7 +32,7 @@ if (isset($_POST["Submit"]))
       }
       else
       {
-        Redirect_to("MyProfile.php");
+        Redirect_to("index.php");
       }
     }
     else
