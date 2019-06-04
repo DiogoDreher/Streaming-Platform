@@ -4580,7 +4580,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.842);
   background-clip: border-box;
   border-radius: 5px;
 }
