@@ -8,14 +8,6 @@ Confirm_Login(); ?>
 <?php
 //Fetching the existing Admin Data
 $UserId = $_SESSION["UserId"];
-// global $ConnectingDB;
-// $sql = "SELECT * FROM users WHERE id='$UserId'";
-// $stmt = $ConnectingDB->query($sql);
-// while ($DataRows = $stmt->fetch())
-// {
-//     $ExistingUsername = $DataRows["username"];
-//     $ExistingEmail = $DataRows["email"];
-// }
 
 //Updating
 
