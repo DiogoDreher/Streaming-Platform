@@ -58,4 +58,25 @@ function Confirm_Login()
     }
 }
 
+function Find_Movies($UserId) {
+    
+        global $ConnectingDB;
+        $sql = "SELECT * FROM favorites_movies WHERE users_id='$UserId'";
+        $stmt = $ConnectingDB->query($sql);
+        while ($DataRows = $stmt->fetch())
+        {
+        $Movies = $DataRows["movies_id"];
+        }
+    
+        $sql = "SELECT * FROM movies WHERE id='$Movies'";
+        $stmt = $ConnectingDB->query($sql);
+        while ($DataRows = $stmt->fetch())
+        {
+            $MovieTitle = $DataRows["title"];
+            $MovieImage = $DataRows["mimage"];
+            $MovieSinopse = $DataRows["sinopse"];
+        }
+        echo $MovieTitle;
+}
+
 ?>

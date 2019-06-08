@@ -19,6 +19,57 @@ while ($DataRows = $stmt->fetch())
     $ExistingEmail = $DataRows["email"];
     $ExistingImage = $DataRows["userimage"];
 }
+
+// $sql = "SELECT favorites_movies.users_id, 
+//                favorites_movies.movies_id, 
+//                movies.title, 
+//                movies.mimage, 
+//                movies.sinopse 
+//         FROM favorites_movies
+//         LEFT JOIN movies ON (movies.id = favorites_movies.movies_id)
+//         WHERE (favorites_movies.users_id='$UserId')";
+//         $stmt = $ConnectingDB->query($sql);
+//         $DataRows = $stmt->fetch();      
+        
+//             for ($i = 0; $i < count($DataRows); $i++) {
+//                     $Movie = ['title' => array($i => $DataRows["title"]),
+//                               'mimage' => array($i => $DataRows["mimage"]),
+//                               'sinopse' => array($i => $DataRows["sinopse"])
+//         ];
+//             }
+
+        
+
+       
+            
+        
+
+// $sql = "SELECT movies.title AS 'title', 
+//                movies.mimage AS 'mImage', 
+//                movies.sinopse AS 'sinopse' 
+//         FROM favorites_movies, movies
+//         WHERE ('$UserId' = favorites_movies.users_id)
+//         AND (favorites_movies.movies_id = movies.id)";
+//         $stmt = $ConnectingDB->query($sql);
+//         while( $DataRows = $stmt->fetch()){       
+        
+//             $MovieTitle = $DataRows["title"];
+//             $MovieImage = $DataRows["mImage"];
+//             $MovieSinopse = $DataRows["sinopse"];
+
+//             echo $MovieTitle . "<br>";
+//             echo $MovieImage . "<br>";    
+//             echo $MovieSinopse  . "<br>";
+    
+
+// }
+
+        // for ($i = 0; $i < count($Movie); $i++){
+                
+        // echo $Movie['title'][$i];
+        // echo $Movie['mimage'][$i];
+        // echo $Movie['sinopse'][$i];
+        // }
 ?>
 
 <!DOCTYPE html>
@@ -98,59 +149,43 @@ while ($DataRows = $stmt->fetch())
 
                 <section class="row">
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="http://images5.fanpop.com/image/photos/32000000/Looper-Movie-Poster-looper-32031468-2560-1920.jpg"
-                                    alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">Looper</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-                            </section>
-                        </section>
-                    </section>
+                <?php  
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="https://iphonewalls.net/wp-content/uploads/2013/05/Fight%20Club%20iPhone%20Wallpaper.jpg"
-                                    alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">Fight Club</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </section>
-                        </section>
-                    </section>
+                $ConnectingDB;
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card">
-                            <a href="#"><img class="card-img-top"
-                                    src="https://boygeniusreport.files.wordpress.com/2017/10/the-matrix.jpg?quality=98&strip=all"
-                                    alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">The Matrix</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </section>
+                $sql = "SELECT * 
+                FROM favorites_movies
+                LEFT JOIN movies ON (movies.id = favorites_movies.movies_id)
+                WHERE (favorites_movies.users_id='$UserId') 
+                ORDER BY favDate asc 
+                LIMIT 0,3";
+                $stmt = $ConnectingDB->query($sql);
+
+                while ($DataRows = $stmt->fetch())
+                {
+                    $MovieTitle = $DataRows["title"];
+                    $MovieImage = $DataRows["mimage"];
+                    $MovieSinopse = $DataRows["sinopse"];
+
+                ?>
+                
+                <section class='col-lg-4 col-md-6 mb-4'>
+                    <section class='card h-100'>
+                        <a href='#'><img class='card-img-top' src='images/<?php echo htmlentities($MovieImage);?>'></a>
+                        <section class='card-body'>
+                            <h4 class='card-title'>
+                                <a href='#' class='card-title'><?php echo htmlentities($MovieTitle); ?></a>
+                            </h4>
+                            <p class='card-text'><?php echo htmlentities($MovieSinopse); ?></p>
+                        </section>
+                        <section class='card-footer'>
+                            <small class='text-muted'>&#9733; &#9733; &#9733; &#9734; &#9734;</small>
                         </section>
                     </section>
+                </section>
+
+                <?php } ?>
+                    
 
                 </section>
 
@@ -158,58 +193,44 @@ while ($DataRows = $stmt->fetch())
 
                 <section class="row">
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fimages%2Fdims%3Fresize%3D2000%252C2000%252Cshrink%26image_uri%3Dhttps%253A%252F%252Fs.yimg.com%252Fos%252Fcreatr-uploaded-images%252F2019-03%252F27b8b530-4d11-11e9-9a5d-abff109d9454%26client%3Da1acac3e1b3290917d92%26signature%3D7d7acac487a2489f651946f62b5d26164f82235a&client=amp-blogside-v2&signature=00ca69ada0f6e8d3ab1382d1dc216310dcae41e2"
-                                    alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">Neon Genesis Evangelion</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                            </section>
-                        </section>
-                    </section>
+                    <?php  
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="https://thewallpaper.co/wp-content/uploads/2016/10/Game-Of-Thrones-2015-Season-5-Poster-Wallpaper-free-4k-high-definition-amazing-background-wallpapers-pictures-widescreen-1080p-3840x2400-768x480.jpg"
-                                    alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">Game of Thrones</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
-                            </section>
-                        </section>
-                    </section>
+                $ConnectingDB;
 
-                    <section class="col-lg-4 col-md-6 mb-4">
-                        <section class="card h-100">
-                            <a href="#"><img class="card-img-top"
-                                    src="https://thats-normal.com/wp-content/uploads/2015/06/fringe_.jpg" alt=""></a>
-                            <section class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#" class="card-title">Fringe</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-                                    numquam aspernatur!</p>
-                            </section>
-                            <section class="card-footer">
-                                <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
-                            </section>
+                $sql = "SELECT * 
+                FROM favorites_series
+                LEFT JOIN series ON (series.id = favorites_series.series_id)
+                WHERE (favorites_series.users_id='$UserId') 
+                ORDER BY favDate asc 
+                LIMIT 0,3";
+                $stmt = $ConnectingDB->query($sql);
+
+                while ($DataRows = $stmt->fetch())
+                {
+                    $SerieTitle = $DataRows["title"];
+                    $SerieImage = $DataRows["simage"];
+                    $SerieSinopse = $DataRows["sinopse"];
+
+                ?>
+                
+                <section class='col-lg-4 col-md-6 mb-4'>
+                    <section class='card h-100'>
+                        <a href='#'><img class='card-img-top' src='images/<?php echo htmlentities($SerieImage);?>'></a>
+                        <section class='card-body'>
+                            <h4 class='card-title'>
+                                <a href='#' class='card-title'><?php echo htmlentities($SerieTitle); ?></a>
+                            </h4>
+                            <p class='card-text'><?php echo htmlentities($SerieSinopse); ?></p>
+                        </section>
+                        <section class='card-footer'>
+                            <small class='text-muted'>&#9733; &#9733; &#9733; &#9734; &#9734;</small>
                         </section>
                     </section>
+                </section>
+
+                <?php } ?>
+
+                    
 
                     <!--Footer-->
 
