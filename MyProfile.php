@@ -118,7 +118,7 @@ while ($DataRows = $stmt->fetch())
                                 <h3><?php echo htmlentities($ExistingName); ?></h3>
                             </div>
                             <div class="card-body">
-                                <img src="images/<?php echo $ExistingImage; ?>" class="rounded-circle mx-auto d-block" style="max-width: 120px ;max-height: 150px ; ">
+                                <img src="uploads/<?php echo $ExistingImage; ?>" class="rounded-circle mx-auto d-block" style="max-width: 120px ;max-height: 150px ; ">
                                 <div class="text-center mt-2">
                                     <a href="Edit.php">Edit Profile</a> <br>
                                     <a href="DeleteUser.php">Delete Account</a>
@@ -145,7 +145,9 @@ while ($DataRows = $stmt->fetch())
                 </section>
                 
 
-                <p class="homepage-categoria">Favorite Movies</p>
+                <p class="homepage-categoria">
+                    <a style="color: #ffffff; text-decoration: none;" href="FavMovies.php">Favorite Movies</a> 
+                </p>
 
                 <section class="row">
 
@@ -157,7 +159,7 @@ while ($DataRows = $stmt->fetch())
                 FROM favorites_movies
                 LEFT JOIN movies ON (movies.id = favorites_movies.movies_id)
                 WHERE (favorites_movies.users_id='$UserId') 
-                ORDER BY favDate asc 
+                ORDER BY favDate desc 
                 LIMIT 0,3";
                 $stmt = $ConnectingDB->query($sql);
 
@@ -176,7 +178,14 @@ while ($DataRows = $stmt->fetch())
                             <h4 class='card-title'>
                                 <a href='#' class='card-title'><?php echo htmlentities($MovieTitle); ?></a>
                             </h4>
-                            <p class='card-text'><?php echo htmlentities($MovieSinopse); ?></p>
+                            <p class='card-text'>
+                                    <?php
+                                        if(strlen($MovieSinopse)>150) {
+                                            $MovieSinopse = substr($MovieSinopse,0,150). "...";
+                                        } 
+                                        echo htmlentities($MovieSinopse); 
+                                    ?>
+                                </p>
                         </section>
                         <section class='card-footer'>
                             <small class='text-muted'>&#9733; &#9733; &#9733; &#9734; &#9734;</small>
@@ -189,7 +198,9 @@ while ($DataRows = $stmt->fetch())
 
                 </section>
 
-                <p class="homepage-categoria">Favorite Series</p>
+                <p class="homepage-categoria">
+                    <a style="color: #ffffff; text-decoration: none;" href="FavSeries.php">Favorite Series</a>
+                </p>
 
                 <section class="row">
 
@@ -201,7 +212,7 @@ while ($DataRows = $stmt->fetch())
                 FROM favorites_series
                 LEFT JOIN series ON (series.id = favorites_series.series_id)
                 WHERE (favorites_series.users_id='$UserId') 
-                ORDER BY favDate asc 
+                ORDER BY favDate desc 
                 LIMIT 0,3";
                 $stmt = $ConnectingDB->query($sql);
 
@@ -220,7 +231,14 @@ while ($DataRows = $stmt->fetch())
                             <h4 class='card-title'>
                                 <a href='#' class='card-title'><?php echo htmlentities($SerieTitle); ?></a>
                             </h4>
-                            <p class='card-text'><?php echo htmlentities($SerieSinopse); ?></p>
+                            <p class='card-text'>
+                                    <?php
+                                        if(strlen($SerieSinopse)>150) {
+                                            $SerieSinopse = substr($SerieSinopse,0,150). "...";
+                                        } 
+                                        echo htmlentities($SerieSinopse); 
+                                    ?>
+                                </p>
                         </section>
                         <section class='card-footer'>
                             <small class='text-muted'>&#9733; &#9733; &#9733; &#9734; &#9734;</small>

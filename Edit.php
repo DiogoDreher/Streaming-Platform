@@ -16,7 +16,7 @@ if (isset($_POST["Submit"]))
     $Password = $_POST['Passw'];
     $ConfirmPassword = $_POST['ConfirmPassw'];
     $Image = $_FILES["Image"]["name"];
-    $Target = "Images/" . basename($_FILES["Image"]["name"]);
+    $Target = "uploads/" . basename($_FILES["Image"]["name"]);
 
 
     $ConnectingDB;
