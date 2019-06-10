@@ -414,3 +414,54 @@ background: linear-gradient(#0a0a0a00, #fabc60a2);
   cursor: pointer;
 
 }
+
+.movie_individual{
+
+background-color: rgba(255, 255, 255, 0.842);
+min-height: 550px;
+border-radius: 8px;
+
+}
+
+.movie_title{
+
+text-align: center;
+vertical-align: middle;
+color: white;
+font-family: 'Lato';
+font-size: 26px;
+font-weight: 400;
+margin: 0;
+
+}
+
+.movie_trailer{
+
+  background-color: crimson;
+  color: white;
+  text-decoration: none;
+  padding: 6px 40%;
+  font-family: 'Lato';
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+
+}
+
+.movie_trailer:hover {
+
+  background-color: rgb(195, 82, 67);
+  color: white;
+  cursor: pointer;
+
+}
+
+.movie_image{
+
+height: 50%;
+width: 100%;
+margin: 15px 0;
+border-radius: 6px;
+
+}
