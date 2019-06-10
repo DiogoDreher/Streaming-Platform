@@ -393,3 +393,24 @@ margin-bottom: 22px;
 background: linear-gradient(#0a0a0a00, #fabc60a2);
 
 }
+
+.botaoplayer {
+    
+  background-color: #fabc60;
+  color: #0a0a0a00;
+  padding: 15px;
+  font-family: sans-serif, "Helvetica Neue";
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  
+}
+
+.botaoplayer:hover {
+
+  background-color: lightskyblue;
+  color: #202020;
+  cursor: pointer;
+
+}
