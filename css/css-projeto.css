@@ -437,31 +437,92 @@ margin: 0;
 
 .movie_trailer{
 
-  background-color: crimson;
-  color: white;
+  background-color: rgb(209, 72, 72);
+  color: #232323;
   text-decoration: none;
-  padding: 6px 40%;
   font-family: 'Lato';
   font-weight: bold;
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: .3rem;
+  padding: 2%;
+
+}
+
+.movie_fav{
+
+  background-color: #fabc60;
+  color: #232328;
+  text-decoration: none;
+  font-family: 'Lato';
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: .3rem;
+  padding: 2%;
+
+}
+
+.movie_play{
+
+  background-color: rgb(134, 187, 36);
+  color: #232323;
+  text-decoration: none;
+  font-family: 'Lato';
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  padding: 2%;
 
 }
 
 .movie_trailer:hover {
 
-  background-color: rgb(195, 82, 67);
+  background-color: #232323;
   color: white;
   cursor: pointer;
+  padding: 2%;
+
+}
+
+.movie_fav:hover {
+
+  background-color: #232323;
+  color: white;
+  cursor: pointer;
+  padding: 2%;
+
+}
+
+.movie_play:hover {
+
+  background-color: #232323;
+  color: white;
+  cursor: pointer;
+  padding: 2%;
 
 }
 
 .movie_image{
 
-height: 50%;
+height: 65%;
 width: 100%;
-margin: 15px 0;
+margin-bottom: 2%;
 border-radius: 6px;
+
+}
+
+.movie_text{
+
+font-size: 18px;
+font-family: 'Lato';
+color: #232323;
+margin: 0;
 
 }
