@@ -19,81 +19,16 @@ while ($DataRows = $stmt->fetch())
     $ExistingEmail = $DataRows["email"];
     $ExistingImage = $DataRows["userimage"];
 }
-
-// $sql = "SELECT favorites_movies.users_id, 
-//                favorites_movies.movies_id, 
-//                movies.title, 
-//                movies.mimage, 
-//                movies.sinopse 
-//         FROM favorites_movies
-//         LEFT JOIN movies ON (movies.id = favorites_movies.movies_id)
-//         WHERE (favorites_movies.users_id='$UserId')";
-//         $stmt = $ConnectingDB->query($sql);
-//         $DataRows = $stmt->fetch();      
-        
-//             for ($i = 0; $i < count($DataRows); $i++) {
-//                     $Movie = ['title' => array($i => $DataRows["title"]),
-//                               'mimage' => array($i => $DataRows["mimage"]),
-//                               'sinopse' => array($i => $DataRows["sinopse"])
-//         ];
-//             }
-
-        
-
-       
-            
-        
-
-// $sql = "SELECT movies.title AS 'title', 
-//                movies.mimage AS 'mImage', 
-//                movies.sinopse AS 'sinopse' 
-//         FROM favorites_movies, movies
-//         WHERE ('$UserId' = favorites_movies.users_id)
-//         AND (favorites_movies.movies_id = movies.id)";
-//         $stmt = $ConnectingDB->query($sql);
-//         while( $DataRows = $stmt->fetch()){       
-        
-//             $MovieTitle = $DataRows["title"];
-//             $MovieImage = $DataRows["mImage"];
-//             $MovieSinopse = $DataRows["sinopse"];
-
-//             echo $MovieTitle . "<br>";
-//             echo $MovieImage . "<br>";    
-//             echo $MovieSinopse  . "<br>";
-    
-
-// }
-
-        // for ($i = 0; $i < count($Movie); $i++){
-                
-        // echo $Movie['title'][$i];
-        // echo $Movie['mimage'][$i];
-        // echo $Movie['sinopse'][$i];
-        // }
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Projeto Final TI 2</title>
-    <link href="css/css-projeto.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="css/bootstrap.css" rel="stylesheet">
-</head>
-
-<body style="margin-top: 0;">
-
-    <section class="section-barra">
-        <nav class="barra">
-            <a class="brand-barra" href="index.php"><i class="fas fa-bolt"
-                    style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-            <a class="link-barra" href="LogOut.php">Log Out</a>
-        </nav>
-    </section>
+    <title><?php echo htmlentities($ExistingName); ?>'s Profile</title>
+    <!--Header-->
+    <?php require_once("Includes/header.php"); ?>
+    <!--End Header-->
 
     <section class="page-container">
         <section class="content-wrap">
@@ -165,6 +100,7 @@ while ($DataRows = $stmt->fetch())
 
                 while ($DataRows = $stmt->fetch())
                 {
+                    $MovieId = $DataRows["id"];
                     $MovieTitle = $DataRows["title"];
                     $MovieImage = $DataRows["mimage"];
                     $MovieSinopse = $DataRows["sinopse"];
@@ -173,10 +109,10 @@ while ($DataRows = $stmt->fetch())
                 
                 <section class='col-lg-4 col-md-6 mb-4'>
                     <section class='card h-100'>
-                        <a href='#'><img class='card-img-top' src='images/<?php echo htmlentities($MovieImage);?>'></a>
+                        <a href='Movie.php?id=<?php echo htmlentities($MovieId); ?>'><img class='card-img-top' src='images/<?php echo htmlentities($MovieImage);?>'></a>
                         <section class='card-body'>
                             <h4 class='card-title'>
-                                <a href='#' class='card-title'><?php echo htmlentities($MovieTitle); ?></a>
+                                <a href='Movie.php?id=<?php echo htmlentities($MovieId); ?>' class='card-title'><?php echo htmlentities($MovieTitle); ?></a>
                             </h4>
                             <p class='card-text'>
                                     <?php

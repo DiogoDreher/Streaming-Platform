@@ -22,25 +22,10 @@ while ($DataRows = $stmt->fetch())
 <html>
 
 <head>
-    <title>Projeto Final TI 2</title>
-    <link href="css/css-projeto.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="css/bootstrap.css" rel="stylesheet">
-</head>
-
-<body style="margin-top: 0;">
-
-    <section class="section-barra">
-        <nav class="barra">
-            <a class="brand-barra" href="index.php"><i class="fas fa-bolt"
-                    style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-            <a class="link-barra" href="LogOut.php">Log Out</a>
-            <a class="link-barra" href="MyProfile.php">My Profile</a>
-        </nav>
-    </section>
+    <title>Favorite Series</title>
+    <!--Header-->
+    <?php require_once("Includes/header.php"); ?>
+    <!--End Header-->
 
     <section class="page-container">
         <section class="content-wrap">

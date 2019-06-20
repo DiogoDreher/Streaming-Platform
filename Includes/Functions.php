@@ -26,6 +26,24 @@ function CheckUsernameExistsOrNot($Username)
     }
 }
 
+function CheckEmailExistsOrNot($Email)
+{
+    global $ConnectingDB;
+    $sql = "SELECT email FROM users WHERE email=:eMail";
+    $stmt = $ConnectingDB->prepare($sql);
+    $stmt->bindValue(':eMail', $Email);
+    $stmt->execute();
+    $Result = $stmt->rowcount();
+    if ($Result == 1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 function Login_Attempt($Username, $Password)
 {
     global $ConnectingDB;

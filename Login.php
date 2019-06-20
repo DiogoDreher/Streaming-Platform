@@ -48,25 +48,10 @@ if (isset($_POST["Submit"]))
 <html>
 
 <head>
-  <title>Projeto Final TI 2 - Log In Form</title>
-  <link href="css/css-projeto.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="css/bootstrap.css" rel="stylesheet">
-</head>
-
-<body style="margin: 0;">
-
-<section class="section-barra">
-  <nav class="barra">
-    <a class="brand-barra" href="index.php"><i class="fas fa-bolt"
-        style="font-size: 20px; color: rgb(250, 188, 96)"></i> ThunderStream</a>
-    <a class="link-barra" href="LogIn.php">Log In</a>
-    <a class="link-barra" href="SignUp.php">Sign Up</a>
-  </nav>
-</section>
+  <title>Login</title>
+  <!--Header-->
+  <?php require_once("Includes/header.php"); ?>
+  <!--End Header-->
 
 
 
@@ -95,7 +80,7 @@ if (isset($_POST["Submit"]))
             <br>
             <input type="password" class="input-log-sign" name="Password" id="password">
             <br>
-            <a href="#" class="forgot-password">Forgot password?</a>
+            <a href="ChkEmail.php" class="forgot-password">Forgot password?</a>
 
             <button type="submit" name="Submit" class="button-log-sign">Log In</button>
           </form>
