@@ -8,7 +8,7 @@ if (isset($_POST["Submit"]))
     $LastName = $_POST["lName"];
     $Username = $_POST["Username"];
     $Password = $_POST["Passw"];
-    $Email = $_POST["Email"];
+    $Email=Test_User_Input($_POST["Email"]);
     $ConfirmPassword = $_POST["ConfirmPassw"];
 
     date_default_timezone_set("Europe/Lisbon");
@@ -35,6 +35,10 @@ if (isset($_POST["Submit"]))
         $_SESSION['ErrorMessage'] = "Password and confirmation should match!";
         Redirect_to("SignUp.php");
     }
+    elseif (!preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/", $email)) {
+      $_SESSION['ErrorMessage'] = "Invalid e-mail format.";
+        Redirect_to("SignUp.php");
+    }    
     elseif (CheckUsernameExistsOrNot($Username))
     {
         $_SESSION['ErrorMessage'] = "Username already exists, please try another one.";

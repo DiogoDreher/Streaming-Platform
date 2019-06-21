@@ -2,6 +2,10 @@
 <?php require_once("Includes/Sessions.php"); ?>
 <?php
 
+function Test_User_Input($data){
+  return $data;
+}
+
 function Redirect_to($New_Location)
 {
     header("Location:" . $New_Location);

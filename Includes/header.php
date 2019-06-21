@@ -1,5 +1,5 @@
-  <link href="css/css-projeto.css" rel="stylesheet">
-  <link href="css/css2.css" rel="stylesheet">
+  <link href="css/css-projeto.css?v=12345678" rel="stylesheet">
+  <!-- <link href="css/css2.css" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
     rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
