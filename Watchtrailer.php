@@ -52,7 +52,7 @@
 
               <br><br>
               <div style="text-align: center">
-                  <video controls id="video" height="auto" width="100%">
+                  <video controls id="video" height="auto" width="100%" autoplay>
                       <source src="videos/<?php echo htmlentities($Title . '/' . $Title); ?> HD.mp4" type="video/mp4" id="videosrc">
                   </video>
                   
