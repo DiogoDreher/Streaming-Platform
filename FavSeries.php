@@ -60,6 +60,7 @@ while ($DataRows = $stmt->fetch())
 
                     while ($DataRows = $stmt->fetch())
                     {
+                        $SerieId = $DataRows['id'];
                         $SerieTitle = $DataRows["title"];
                         $SerieImage = $DataRows["simage"];
                         $SerieSinopse = $DataRows["sinopse"];
@@ -68,11 +69,11 @@ while ($DataRows = $stmt->fetch())
 
                     <section class='col-lg-4 col-md-6 mb-4'>
                         <section class='card h-100'>
-                            <a href='#'><img class='card-img-top'
+                            <a href='Serie.php?id=<?php echo htmlentities($SerieId); ?>'><img class='card-img-top'
                                     src='images/<?php echo htmlentities($SerieImage); ?>'></a>
                             <section class='card-body'>
                                 <h4 class='card-title'>
-                                    <a href='#' class='card-title'><?php echo htmlentities($SerieTitle); ?></a>
+                                    <a href='Serie.php?id=<?php echo htmlentities($SerieId); ?>' class='card-title'><?php echo htmlentities($SerieTitle); ?></a>
                                 </h4>
                                 <p class='card-text'>
                                     <?php

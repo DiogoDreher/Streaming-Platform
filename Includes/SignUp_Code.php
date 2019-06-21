@@ -40,6 +40,11 @@ if (isset($_POST["Submit"]))
         $_SESSION['ErrorMessage'] = "Username already exists, please try another one.";
         Redirect_to("SignUp.php");
     }
+    elseif (CheckEmailExistsOrNot($Email))
+    {
+        $_SESSION['ErrorMessage'] = "There is already an account associated to this e-mail address. Try recovering your password.";
+        Redirect_to("ChkEmail.php");
+    }
     else
     {
         //Query to insert new user in our DataBase
