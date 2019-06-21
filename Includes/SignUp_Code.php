@@ -35,7 +35,7 @@ if (isset($_POST["Submit"]))
         $_SESSION['ErrorMessage'] = "Password and confirmation should match!";
         Redirect_to("SignUp.php");
     }
-    elseif (!preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/", $email)) {
+    elseif (!preg_match("/[a-zA-Z0-9._-]{3,}@[a-zA-Z0-9._-]{3,}[.]{1}[a-zA-Z0-9._-]{2,}/", $Email)) {
       $_SESSION['ErrorMessage'] = "Invalid e-mail format.";
         Redirect_to("SignUp.php");
     }    
